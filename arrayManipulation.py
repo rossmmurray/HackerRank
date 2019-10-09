@@ -8,10 +8,13 @@ import sys
 
 # Complete the arrayManipulation function below.
 def arrayManipulation(n, queries):
-    initialList = [0] * n
+    array = [0] * n
     for query in queries:
-        pass
-    return queries
+        for i, _val in enumerate(array):
+            if query[0] <= i + 1 <= query[1]:
+                array[i] += query[2]
+        # array = [x + query[2] for x in array]
+    return max(array)
 
 
 if __name__ == '__main__':
