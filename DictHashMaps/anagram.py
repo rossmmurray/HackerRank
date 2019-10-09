@@ -21,10 +21,9 @@ def sherlockAndAnagrams(s):
             substring = s[i:i + size + 1]
             sizeSubstrings.append(Counter(substring))
         
-        # compare all counter objects 
+        # compare all counter objects
         for a, b in combinations(sizeSubstrings, 2):
             count += 1 if a == b else 0
-
     return count
 
 if __name__ == '__main__':
