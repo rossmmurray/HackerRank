@@ -5,16 +5,15 @@ import os
 import random
 import re
 import sys
+from itertools import accumulate
 
 # Complete the arrayManipulation function below.
 def arrayManipulation(n, queries):
-    array = [0] * n
+    delta = [0] * (n + 2)
     for query in queries:
-        # for i in range(query[0], query[1] + 1):
-        #     array[i - 1] += query[2]
-        
-    return max(array)
-
+        delta[query[0]] += query[2]
+        delta[query[1] + 1] -= query[2]
+    return max(accumulate(delta))
 
 if __name__ == '__main__':
     # fptr = open(os.environ['OUTPUT_PATH'], 'w')
