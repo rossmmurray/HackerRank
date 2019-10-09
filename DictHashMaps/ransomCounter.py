@@ -29,4 +29,4 @@ if __name__ == '__main__':
 
     note = 'test Some input blah'.rstrip().split()
 
-    res = checkMagazine(magazine, note)
+    checkMagazine(magazine, note)
