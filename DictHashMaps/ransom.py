@@ -28,18 +28,6 @@ def checkMagazine(magazine, note):
     return 0
 
 
-    print(magDict)
-    # for word in note:
-    #     try:
-    #         index = magazine.index(word)
-    #         magazine.pop(index)
-    #     except ValueError:
-    #         print('No')
-    #         return 1
-    # print('Yes')
-    # return 0
-
-
 if __name__ == '__main__':
     # mn = input().split()
 
