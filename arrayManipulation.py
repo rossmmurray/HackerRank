@@ -10,10 +10,9 @@ import sys
 def arrayManipulation(n, queries):
     array = [0] * n
     for query in queries:
-        for i, _val in enumerate(array):
-            if query[0] <= i + 1 <= query[1]:
-                array[i] += query[2]
-        # array = [x + query[2] for x in array]
+        # for i in range(query[0], query[1] + 1):
+        #     array[i - 1] += query[2]
+        
     return max(array)
 
 
