@@ -1,4 +1,4 @@
-function twoStrings(s1, s2) {
+function maximumToys(s1, s2) {
     var map = {}
     for (let letter of s1) {
         map[letter] = 1;
@@ -16,6 +16,6 @@ function twoStrings(s1, s2) {
 // testings
 const testStrings = [['hello', 'llot'], ['1', '2']]
 for (i in testStrings) {
-    const result = twoStrings(...testStrings[i])
+    const result = maximumToys(...testStrings[i])
     console.log(result)
 }
