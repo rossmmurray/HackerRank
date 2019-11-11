@@ -5,6 +5,7 @@ import os
 import random
 import re
 import sys
+from bisect import insort, bisect_left
 
 # Complete the activityNotifications function below.
 
@@ -23,11 +24,25 @@ def activityNotifications(expenditure, d):
     notifyCount = 0
     trail = expenditure[i - d:i]
     trail.sort()
-    while i < len(expenditure):
+
+    while True:
+        print(trail)
+
+        # calculate if notification is needed on day i
         median = getMedian(trail)
         if expenditure[i] >= median * 2:
             notifyCount += 1
+
+        if i == len(expenditure) - 1:
+            break
+        
+        # trail remains sorted with delete and special insert
+        # trail.remove(expenditure[i-d])  
+        del trail[bisect_left(trail,expenditure[i-d])]
+        insort(trail, expenditure[i])
+
         i += 1
+
     return notifyCount
 
 
