@@ -39,8 +39,10 @@ def insertNodeAtTail(head, data):
     while True:
         if head.next == None:
             head.next = SinglyLinkedListNode(data)
-            return firstHead
+            break
         head = head.next
+    return firstHead
+    
         
 
 if __name__ == '__main__':
