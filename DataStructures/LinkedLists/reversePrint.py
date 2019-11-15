@@ -46,13 +46,13 @@ def print_singly_linked_list(node, sep):
 #     SinglyLinkedListNode next
 #
 #
-def stringifyNodes(node):
-    if node.next == None:
-        return str(node.data)
-    return str(stringifyNodes(node.next)) + '\n' + str(node.data)
+
 
 def reversePrint(head):
-    print(stringifyNodes(head))
+    if head == None:
+        return
+    reversePrint(head.next)
+    print(head.data)
 
 if __name__ == '__main__':
     tests = int(input())
