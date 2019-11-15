@@ -23,20 +23,10 @@ def print_singly_linked_list(node, sep):
         if node:
             print(sep)
 
-def addNode(node, data):
-    if node.next:
-        addNode(node.next, data)
-    else:
-        node.next = SinglyLinkedListNode(data)
-
 def insertNodeAtTail(head, data):
-    # if empty list
-    if head == None:
-        return SinglyLinkedListNode(data)
-
-    # if list not empty
-    addNode(head, data)
-    return head
+    newNode = SinglyLinkedListNode(data)
+    newNode.next = head
+    return newNode
     
         
 
