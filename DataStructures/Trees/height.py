@@ -34,17 +34,18 @@ class BinarySearchTree:
                 else:
                     break
 
-"""
-Node is defined as
-self.left (the left child of the node)
-self.right (the right child of the node)
-self.info (the value of the node)
-"""
-def preOrder(root):
-    if root:
-        print(root.info, end=" ")
-        preOrder(root.left)
-        preOrder(root.right)
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+'''
+class Node:
+      def __init__(self,info): 
+          self.info = info  
+          self.left = None  
+          self.right = None 
+           
+
+       // this is a node of the tree , which contains info as data, left , right
+'''
+def height(root):
 
 
 
@@ -56,5 +57,4 @@ arr = list(map(int, input().split()))
 for i in range(t):
     tree.create(arr[i])
 
-preOrder(tree.root)
-print()
+print(height(tree.root))

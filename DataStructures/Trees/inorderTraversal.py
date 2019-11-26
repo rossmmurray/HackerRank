@@ -40,11 +40,11 @@ self.left (the left child of the node)
 self.right (the right child of the node)
 self.info (the value of the node)
 """
-def preOrder(root):
+def inOrder(root):
     if root:
+        inOrder(root.left)
         print(root.info, end=" ")
-        preOrder(root.left)
-        preOrder(root.right)
+        inOrder(root.right)
 
 
 
@@ -56,5 +56,5 @@ arr = list(map(int, input().split()))
 for i in range(t):
     tree.create(arr[i])
 
-preOrder(tree.root)
+inOrder(tree.root)
 print()
